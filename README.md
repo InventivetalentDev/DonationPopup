@@ -1,5 +1,5 @@
 # DonationPopup
-Tiny script to show a donation popup on websites
+Tiny script to show a donation popup to common visitors to a website
 
 ![](https://yeleha.co/2JirrFi)
 
