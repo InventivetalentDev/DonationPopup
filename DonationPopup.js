@@ -4,15 +4,15 @@
         {
             visits: 10,// Number of visits required for the popup to first show up
             timeout: 24,// Timeout for the 'remind later' option in hours
-            text: "Hey there, sorry for the interruption!\nIt looks like you've visited this site a couple of times - if you like it and want to help keep it running, please consider throwing over a small donation :)",
-            postponeText: "Maybe Later",
-            dismissText: "Never!",
-            enableAnalytics: false,
+            text: "Hey there, sorry for the interruption!\nIt looks like you've visited this site a couple of times - if you like it and want to help keep it running, please consider throwing over a small donation :)",// Text of the popup
+            postponeText: "Maybe Later",// Text on the 'remind me later' button
+            dismissText: "Never!",// Text on the dismiss button
+            color: "#9c9c9c",// Background color
+            position: "bottom-right",// Position of the popup
+            enableAnalytics: false,// Toggle Google Analytics - will send a custom event on clicks if enabled
             baseStyle: "position: fixed; border-radius: 20px; padding: 10px; font-family: Consolas, monospace; max-width: 30vmax;",
             buttonStyle: "padding: 2px;",
             buttonImgStyle: "max-height: 40px;",
-            color: "#9c9c9c",
-            position: "bottom-right",
             edgeDistance: 10,
             buttonTarget: "_blank",
             buttons: {
