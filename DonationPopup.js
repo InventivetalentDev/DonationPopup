@@ -10,6 +10,7 @@
             color: "#9c9c9c",// Background color
             position: "bottom-right",// Position of the popup
             enableAnalytics: false,// Toggle Google Analytics - will send a custom event on clicks if enabled
+            cookieTime: 30,// Cookie expiration time in days
             baseStyle: "position: fixed; border-radius: 20px; padding: 10px; font-family: Consolas, monospace; max-width: 30vmax;",
             buttonStyle: "padding: 2px;",
             buttonImgStyle: "max-height: 40px;",
@@ -50,7 +51,7 @@
         if (status === 3) {// set timer if 'postponed'
             time = Date.now();
         }
-        setCookie("DOP_info", JSON.stringify([visits, status, time]), 30);
+        setCookie("DOP_info", JSON.stringify([visits, status, time]), config.cookieTime);
         document.body.removeChild(document.getElementById(window.DOP_config.elid));
 
         if (config.enableAnalytics) {
@@ -62,7 +63,7 @@
     };
 
 
-    setCookie("DOP_info", JSON.stringify([visits, status, time]), 30);
+    setCookie("DOP_info", JSON.stringify([visits, status, time]), config.cookieTime);
 
     function displayPopup() {
         let style = config.baseStyle;
