@@ -37,6 +37,7 @@ npm install --save donationpopup
     links: {
         paypal: "",// PayPal link
         patreon: "",// Patreon link
+        donorbox: "",// Donorbox link
         custom: null // can be a function to add custom HTML
     }
 }
