@@ -10,7 +10,8 @@ Tiny script to show a donation popup to common visitors to a website
     window.DOP_config = {
         links: { // Replace with your links
             paypal: "https://paypal.me/inventivetalent",
-            patreon: "https://patreon.com/inventivetalent"
+            patreon: "https://patreon.com/inventivetalent",
+            donorbox: "https://donorbox.org/inventivetalent-general-donation"
         }
     }
 </script>

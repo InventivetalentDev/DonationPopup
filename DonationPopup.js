@@ -18,11 +18,13 @@
             buttonTarget: "_blank",
             buttons: {
                 paypal: "https://www.paypalobjects.com/digitalassets/c/website/marketing/apac/C2/logos-buttons/optimize/44_Grey_PayPal_Pill_Button.png",
-                patreon: "https://c5.patreon.com/external/logo/become_a_patron_button.png"
+                patreon: "https://c5.patreon.com/external/logo/become_a_patron_button.png",
+                donorbox: "https://d1iczxrky3cnb2.cloudfront.net/button-medium-blue.png"
             },
             links: {
                 paypal: "",
                 patreon: "",
+                donorbox: "",
                 custom: null // can be a function to add custom HTML
             }
         }, config);
@@ -93,6 +95,9 @@
             }
             if (config.links.patreon) {
                 html += "<a onclick='DOP_config.clk(2,\"patreon\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.patreon)).href + "'><img style='" + imgStyle + "' alt='Patreon' src='" + config.buttons.patreon + "'></a>";
+            }
+            if (config.links.donorbox) {
+                html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
             }
         }
         html += "</div><div style='float: right;'>";
