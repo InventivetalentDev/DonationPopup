@@ -14,8 +14,12 @@ Tiny script to show a donation popup to common visitors to a website
         }
     }
 </script>
-<script src="https://cdn.jsdelivr.net/gh/InventivetalentDev/DonationPopup@master/DonationPopup.min.js"></script>
+<script src="https://unpkg.com/donationpopup@1.0.0/DonationPopup.min.js"></script>
 ```  
+
+```
+npm install --save donationpopup
+```
 
 
 ## Configuration
