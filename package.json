@@ -1,6 +1,6 @@
 {
   "name": "donationpopup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny script to show a donation popup to common visitors to a website",
   "main": "DonationPopup.js",
   "scripts": {
