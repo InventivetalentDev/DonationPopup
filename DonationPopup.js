@@ -112,7 +112,7 @@
         if (config.enableAnalytics) {
             // Analytics stuff, useful for Patreon's tracking
             url.searchParams.append("utm_medium", "DonationPopup");
-            url.searchParams.append("utm_source", window.location.host);
+            url.searchParams.append("utm_source", window.location.hostname);
         }
         return url;
     }
