@@ -54,11 +54,8 @@
         setCookie("DOP_info", JSON.stringify([visits, status, time]), config.cookieTime);
         document.body.removeChild(document.getElementById(window.DOP_config.elid));
 
-        if (config.enableAnalytics) {
-            try {
-                ga("send", "event", "DonationPopup", status === 2 ? "clicked" : status === 3 ? "postponed" : "dismissed", extra);
-            } catch (ignored) {
-            }
+        if (config.enableAnalytics && typeof ga === "function") {
+            ga("send", "event", "DonationPopup", status === 2 ? "clicked" : status === 3 ? "postponed" : "dismissed", extra);
         }
     };
 
