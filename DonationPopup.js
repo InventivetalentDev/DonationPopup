@@ -89,10 +89,10 @@
             let buttonStyle = config.buttonStyle;
             let imgStyle = config.buttonImgStyle;
             if (config.links.paypal) {
-                html += "<a onclick='DOP_config.clk(2,\"paypal\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + config.links.paypal + "'><img style='" + imgStyle + "' alt='PayPal' src='" + config.buttons.paypal + "'></a>";
+                html += "<a onclick='DOP_config.clk(2,\"paypal\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.paypal)).href + "'><img style='" + imgStyle + "' alt='PayPal' src='" + config.buttons.paypal + "'></a>";
             }
             if (config.links.patreon) {
-                html += "<a onclick='DOP_config.clk(2,\"patreon\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + config.links.patreon + "'><img style='" + imgStyle + "' alt='Patreon' src='" + config.buttons.patreon + "'></a>";
+                html += "<a onclick='DOP_config.clk(2,\"patreon\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.patreon)).href + "'><img style='" + imgStyle + "' alt='Patreon' src='" + config.buttons.patreon + "'></a>";
             }
         }
         html += "</div><div style='float: right;'>";
@@ -105,6 +105,16 @@
         el.style = style;
         el.innerHTML = html;
         document.body.appendChild(el);
+    }
+
+    function addUrlParams(url) {
+        if (!url) return url;
+        if (config.enableAnalytics) {
+            // Analytics stuff, useful for Patreon's tracking
+            url.searchParams.append("utm_medium", "DonationPopup");
+            url.searchParams.append("utm_source", window.location.host);
+        }
+        return url;
     }
 
     // https://www.w3schools.com/js/js_cookies.asp
