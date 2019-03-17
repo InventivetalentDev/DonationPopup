@@ -1,7 +1,7 @@
 # DonationPopup
 Tiny script to show a donation popup to common visitors to a website
 
-[![](https://yeleha.co/2JirrFi)](https://patreon.com/inventivetalent)
+[![](https://i.imgur.com/sevD76X.png)](https://patreon.com/inventivetalent)
 
 
 ## Installation
