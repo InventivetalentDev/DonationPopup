@@ -1,0 +1,23 @@
+{
+  "name": "donationpopup",
+  "version": "1.0.0",
+  "description": "Tiny script to show a donation popup to common visitors to a website",
+  "main": "DonationPopup.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InventivetalentDev/DonationPopup.git"
+  },
+  "author": "Haylee Schäfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InventivetalentDev/DonationPopup/issues"
+  },
+  "homepage": "https://github.com/InventivetalentDev/DonationPopup#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
