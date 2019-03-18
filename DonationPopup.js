@@ -102,7 +102,7 @@
                 html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
             }
         }
-        html += "</div><div style='float: right;'>";
+        html += "</div><div style='float: right; padding-top: 4px;'>";
         html += "<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(3)'>" + config.postponeText + "</a>&nbsp;&nbsp;<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(4)'>" + config.dismissText + "</a>";
         html += "</div>";
 
