@@ -32,6 +32,7 @@
         }, config);
     window.DOP_config = config;
 
+    // Get cookie data or make a new one
     let cookie = JSON.parse(getCookie("DOP_info") || '[0,0,0]');
     let visits = cookie[0];
     let status = cookie[1];// 0 = pending, 1 = asked, 2 = clicked, 3 = postponed, 4 = dismissed
@@ -40,7 +41,7 @@
     // increase visit count right away
     visits++;
 
-    if (visits > config.visits) {
+    if (visits > config.visits) {// check if the visits are higher than the configured threshold
         if (status === 0 || status === 1) {// display directly if 'pending' or 'asked'
             displayPopup();
         } else if (status === 3 && Date.now() - time > config.timeout * 60 * 60 * 1000) {// if 'postponed', check if the timeout has passed before displaying
@@ -50,6 +51,7 @@
         if (status === 0) status = 1;// Set to 'asked' if 'pending'
     }
 
+    // Click-handler function used by the generated elements
     window.DOP_config.clk = function (clickType, extra) {
         status = clickType;
         if (status === 3) {// set timer if 'postponed'
@@ -63,9 +65,10 @@
         }
     };
 
-
+    // Update cookie
     setCookie("DOP_info", JSON.stringify([visits, status, time]), config.cookieTime);
 
+    // Function to display the popup
     function displayPopup() {
         let style = config.baseStyle;
         style += "background-color: " + config.color + ";";
@@ -83,10 +86,13 @@
             case "bottom-right":
             default:
                 style += "bottom: " + config.edgeDistance + "px; right: " + config.edgeDistance + "px;";
+                break;
         }
 
+        // Text block
         let html = "<p style='color: " + config.textColor + ";'>" + config.text.replace("\n", "<br/>") + "</p>";
         html += "<div>";
+        // Buttons
         if (typeof config.links.custom === "function") {
             html += config.links.custom(config, cookie) || "";
         } else {
@@ -102,6 +108,7 @@
                 html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
             }
         }
+        // Remind later / Dismiss buttons
         html += "</div><div style='float: right; padding-top: 4px;'>";
         html += "<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(3)'>" + config.postponeText + "</a>&nbsp;&nbsp;<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(4)'>" + config.dismissText + "</a>";
         html += "</div>";
