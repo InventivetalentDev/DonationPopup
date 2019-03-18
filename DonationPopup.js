@@ -8,6 +8,8 @@
             postponeText: "Maybe Later",// Text on the 'remind me later' button
             dismissText: "Never!",// Text on the dismiss button
             color: "#9c9c9c",// Background color
+            textColor: "#1c1c1c",// Text color
+            linkColor: "#0063d6",// Link color (remind later, dismiss)
             position: "bottom-right",// Position of the popup
             enableAnalytics: false,// Toggle Google Analytics - will send a custom event on clicks if enabled
             cookieTime: 30,// Cookie expiration time in days
@@ -83,7 +85,7 @@
                 style += "bottom: " + config.edgeDistance + "px; right: " + config.edgeDistance + "px;";
         }
 
-        let html = "<p>" + config.text.replace("\n", "<br/>") + "</p>";
+        let html = "<p style='color: " + config.textColor + ";'>" + config.text.replace("\n", "<br/>") + "</p>";
         html += "<div>";
         if (typeof config.links.custom === "function") {
             html += config.links.custom(config, cookie) || "";
@@ -101,7 +103,7 @@
             }
         }
         html += "</div><div style='float: right;'>";
-        html += "<a href='#' onclick='DOP_config.clk(3)'>" + config.postponeText + "</a>&nbsp;&nbsp;<a href='#' onclick='DOP_config.clk(4)'>" + config.dismissText + "</a>";
+        html += "<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(3)'>" + config.postponeText + "</a>&nbsp;&nbsp;<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(4)'>" + config.dismissText + "</a>";
         html += "</div>";
 
 
