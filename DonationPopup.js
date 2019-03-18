@@ -92,22 +92,25 @@
         // Text block
         let html = "<p style='color: " + config.textColor + ";'>" + config.text.replace("\n", "<br/>") + "</p>";
         html += "<div>";
+
         // Buttons
-        if (typeof config.links.custom === "function") {
+        if (typeof config.links.custom === "function") {// Custom Button HTML
             html += config.links.custom(config, cookie) || "";
-        } else {
-            let buttonStyle = config.buttonStyle;
-            let imgStyle = config.buttonImgStyle;
-            if (config.links.paypal) {
-                html += "<a onclick='DOP_config.clk(2,\"paypal\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.paypal)).href + "'><img style='" + imgStyle + "' alt='PayPal' src='" + config.buttons.paypal + "'></a>";
-            }
-            if (config.links.patreon) {
-                html += "<a onclick='DOP_config.clk(2,\"patreon\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.patreon)).href + "'><img style='" + imgStyle + "' alt='Patreon' src='" + config.buttons.patreon + "'></a>";
-            }
-            if (config.links.donorbox) {
-                html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
-            }
         }
+
+        // Predefined buttons
+        let buttonStyle = config.buttonStyle;
+        let imgStyle = config.buttonImgStyle;
+        if (config.links.paypal) {
+            html += "<a onclick='DOP_config.clk(2,\"paypal\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.paypal)).href + "'><img style='" + imgStyle + "' alt='PayPal' src='" + config.buttons.paypal + "'></a>";
+        }
+        if (config.links.patreon) {
+            html += "<a onclick='DOP_config.clk(2,\"patreon\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.patreon)).href + "'><img style='" + imgStyle + "' alt='Patreon' src='" + config.buttons.patreon + "'></a>";
+        }
+        if (config.links.donorbox) {
+            html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
+        }
+
         // Remind later / Dismiss buttons
         html += "</div><div style='float: right; padding-top: 4px;'>";
         html += "<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(3)'>" + config.postponeText + "</a>&nbsp;&nbsp;<a href='#' style='color: " + config.linkColor + ";' onclick='DOP_config.clk(4)'>" + config.dismissText + "</a>";
