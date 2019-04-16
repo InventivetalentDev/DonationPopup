@@ -16,6 +16,8 @@
             baseStyle: "position: fixed; border-radius: 20px; padding: 10px; font-family: Consolas, monospace; max-width: 30vmax; z-index: 10000;",
             buttonStyle: "padding: 2px;",
             buttonImgStyle: "max-height: 40px;",
+            cross: "X",
+            crossStyle: "position: absolute; top: 5px; right: 10px; text-decoration: none;",
             edgeDistance: 10,
             buttonTarget: "_blank",
             buttons: {
@@ -91,6 +93,7 @@
 
         // Text block
         let html = "<p style='color: " + config.textColor + ";'>" + config.text.replace("\n", "<br/>") + "</p>";
+        html += "<a style='" + config.crossStyle + "' href='#' onclick='DOP_config.clk(3)'>" + config.cross + "</a>";
         html += "<div>";
 
         // Buttons
