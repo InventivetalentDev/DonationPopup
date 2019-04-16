@@ -13,7 +13,7 @@
             position: "bottom-right",// Position of the popup
             enableAnalytics: false,// Toggle Google Analytics - will send a custom event on clicks if enabled
             cookieTime: 30,// Cookie expiration time in days
-            baseStyle: "position: fixed; border-radius: 20px; padding: 10px; font-family: Consolas, monospace; max-width: 30vmax;",
+            baseStyle: "position: fixed; border-radius: 20px; padding: 10px; font-family: Consolas, monospace; max-width: 30vmax; z-index: 10000;",
             buttonStyle: "padding: 2px;",
             buttonImgStyle: "max-height: 40px;",
             edgeDistance: 10,
