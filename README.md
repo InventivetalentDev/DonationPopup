@@ -11,7 +11,8 @@ Tiny script to show a donation popup to common visitors to a website
         links: { // Replace with your links
             paypal: "https://paypal.me/inventivetalent",
             patreon: "https://patreon.com/inventivetalent",
-            donorbox: "https://donorbox.org/inventivetalent-general-donation"
+            donorbox: "https://donorbox.org/inventivetalent-general-donation",
+            kofi: "https://ko-fi.com/inventivetalent"
         }
     }
 </script>
@@ -38,6 +39,7 @@ npm install --save donationpopup
         paypal: "",// PayPal link
         patreon: "",// Patreon link
         donorbox: "",// Donorbox link
+        kofi: "",// Ko-fi link
         custom: null // can be a function to add custom HTML
     }
 }
