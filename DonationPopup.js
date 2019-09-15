@@ -23,12 +23,14 @@
             buttons: {
                 paypal: "https://www.paypalobjects.com/digitalassets/c/website/marketing/apac/C2/logos-buttons/optimize/44_Grey_PayPal_Pill_Button.png",
                 patreon: "https://c5.patreon.com/external/logo/become_a_patron_button.png",
-                donorbox: "https://d1iczxrky3cnb2.cloudfront.net/button-medium-blue.png"
+                donorbox: "https://d1iczxrky3cnb2.cloudfront.net/button-medium-blue.png",
+                kofi: "https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2"
             },
             links: {
                 paypal: "",
                 patreon: "",
                 donorbox: "",
+                kofi: "",
                 custom: null // can be a function to add custom HTML
             }
         }, config);
@@ -112,6 +114,9 @@
         }
         if (config.links.donorbox) {
             html += "<a onclick='DOP_config.clk(2,\"donorbox\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.donorbox)).href + "'><img style='" + imgStyle + "' alt='Donorbox' src='" + config.buttons.donorbox + "'></a>";
+        }
+        if (config.links.kofi) {
+            html += "<a onclick='DOP_config.clk(2,\"kofi\")' style='" + buttonStyle + "' target='" + config.buttonTarget + "' href='" + addUrlParams(new URL(config.links.kofi)).href + "'><img style='" + imgStyle + "' alt='kofi' src='" + config.buttons.kofi + "'></a>";
         }
 
         // Remind later / Dismiss buttons
