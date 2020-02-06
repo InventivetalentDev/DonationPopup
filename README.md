@@ -16,7 +16,7 @@ Tiny script to show a donation popup to common visitors to a website
         }
     }
 </script>
-<script src="https://unpkg.com/donationpopup@1.1.1/DonationPopup.min.js"></script>
+<script src="https://unpkg.com/donationpopup@1.2.1/DonationPopup.min.js"></script>
 ```  
 
 ```
