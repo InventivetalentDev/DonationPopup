@@ -65,6 +65,12 @@
         document.body.removeChild(document.getElementById(window.DOP_config.elid));
 
         if (config.enableAnalytics && typeof ga === "function") {
+            if (ga.hasOwnProperty("getAll")) {// https://stackoverflow.com/a/40761709/6257838
+                let allTrackers = ga.getAll();
+                if (allTrackers && allTrackers.length > 0) {
+                    allTrackers[0].send("event", "DonationPopup", status === 2 ? "clicked" : status === 3 ? "postponed" : "dismissed", extra);
+                }
+            }
             ga("send", "event", "DonationPopup", status === 2 ? "clicked" : status === 3 ? "postponed" : "dismissed", extra);
         }
     };
