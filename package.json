@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/InventivetalentDev/DonationPopup#readme",
   "devDependencies": {
-    "webpack": "4.29.6",
+    "webpack": "4.46.0",
     "webpack-cli": "3.3.0"
   }
 }
